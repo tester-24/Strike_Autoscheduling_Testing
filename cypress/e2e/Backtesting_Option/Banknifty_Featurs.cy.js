@@ -2,7 +2,7 @@
 
 it('Banknifty_Feature', () => {
 
-    cy.viewport(1750, 800);
+  cy.viewport(1750, 800);
     cy.clearAllCookies();
     cy.visit('https://strike.jainam.in/#/');
     //cy.reload();
@@ -41,10 +41,10 @@ it('Banknifty_Feature', () => {
 
     // 4) Entry Time
     cy.wait(1500);
-    cy.xpath("(//kendo-icon[@class='k-i-clock k-button-icon k-icon ng-star-inserted'])[2]").click();
+    cy.xpath("(//kendo-icon[@class='k-i-clock k-button-icon k-icon ng-star-inserted'])[2]").click({force:true});
 
 
-    cy.xpath("(//input[@id='timepicker-1'])[1]").click();
+    cy.xpath("(//input[@id='timepicker-1'])[1]").click({force:true});
     cy.xpath("(//input[@id='timepicker-1'])[1]").should('be.visible').type("09.10");
     cy.scrollTo(1000, 0);
     cy.get('div.ng-star-inserted > .text-danger').should('be.visible')
@@ -146,7 +146,8 @@ it('Banknifty_Feature', () => {
 
     // select dropdown
     cy.xpath("(//span[@class='k-input-value-text'][normalize-space()='Points'])[1]").click();
-    cy.contains('Underlying Points').click();
+   //cy.contains('Underlying Points').click();
+   cy.xpath('/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[5]/div/div/div/div/div[4]/div[1]/div/div/div/div[1]/div/kendo-dropdownlist/span/span').click()
 
     // Enter Target
     cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
@@ -333,8 +334,4 @@ it('Banknifty_Feature', () => {
     cy.get('.secondary').click();
 
     cy.get('.loader_numb').should("be.visible");
-
-
-
-
 })
