@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
 it("Option Backtesting", () => {
-  cy.viewport(1750, 800);
+ cy.viewport(1750, 800);
   cy.clearAllCookies();
   cy.visit("https://strike.jainam.in");
 
@@ -171,8 +171,8 @@ it("Option Backtesting", () => {
 
     // select dropdown
     cy.xpath("(//span[@class='k-input-value-text'][normalize-space()='Points'])[1]").click();
-    cy.contains('Underlying Points').click();
-
+    //cy.contains('Underlying Points').click();
+    cy.xpath('/html/body/app-root/app-layout/app-option-structure/div[2]/div/div/div/div/div[2]/div/div/div/form[2]/div[5]/div/div/div/div/div[4]/div[1]/div/div/div/div[1]/div/kendo-dropdownlist/span/span').click()
     // Enter Target
     cy.get('.is_new_leg > :nth-child(1) > .form_item_wrap > :nth-child(2) > .d-flex > .border-0 > .form-control').clear();
     cy.get('.border-0 > .ng-star-inserted').should("be.visible");
@@ -382,7 +382,7 @@ it("Option Backtesting", () => {
   cy.get(".sticky_btns_wrap > :nth-child(2) > div > .ng-star-inserted").click();
   cy.get(".k-window-titlebar").should("be.visible");
   //cy.get('[style="float: none;"] > .common_anchor').click();
-  cy.get('.text-start > .full_wrap > .form-control').type('user48945')
+  cy.get('.text-start > .full_wrap > .form-control').type('user258866')
   cy.get('[style="float: none;"] > .common_anchor').click()
 
   
@@ -407,19 +407,19 @@ it("Option Backtesting", () => {
   cy.get('.dash_left_wrap > :nth-child(2) > .common_anchor').click();
 
   // 1) AliceBlue
-  cy.get(":nth-child(3) > .inner_wrap > .a > .common_anchor").click();
+  // cy.get(":nth-child(3) > .inner_wrap > .a > .common_anchor").click();
 
-  // User id
-  cy.get(":nth-child(1) > .form_field_wrap > :nth-child(2) > .form_field").type(
-    "1311739"
-  );
+  // // User id
+  // cy.get(":nth-child(1) > .form_field_wrap > :nth-child(2) > .form_field").type(
+  //   "1311739"
+  // );
 
-  // APi Key
-  cy.get(":nth-child(2) > .form_field_wrap > :nth-child(2) > .form_field").type(
-    "fcIoF0TybGnWzqR4auLjf6o9AtPvrltCsGoWZRSeekH3ZQomBj3bhMhLECUf8SoXL6kq38sjBvScYJm29uEegQkX38FVqrD6lm7P2yGYn1SWMMfoFztVrCR5LIzq7iov"
-  );
+  // // APi Key
+  // cy.get(":nth-child(2) > .form_field_wrap > :nth-child(2) > .form_field").type(
+  //   "fcIoF0TybGnWzqR4auLjf6o9AtPvrltCsGoWZRSeekH3ZQomBj3bhMhLECUf8SoXL6kq38sjBvScYJm29uEegQkX38FVqrD6lm7P2yGYn1SWMMfoFztVrCR5LIzq7iov"
+  // );
 
-  cy.get("#BtnSubmit").click();
+  // cy.get("#BtnSubmit").click();
 
 //  cy.get(".a > .greenbg").should("be.visible");
 
@@ -427,5 +427,4 @@ it("Option Backtesting", () => {
 
 //  cy.wait(5000);
 //  cy.get(".a > .greenbg").click();
-
-});
+})
